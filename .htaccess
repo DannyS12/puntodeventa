@@ -1,0 +1,3 @@
+<FilesMatch "(error_log|dbx.php)">
+    Require all denied
+</FilesMatch>
