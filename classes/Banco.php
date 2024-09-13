@@ -1,5 +1,5 @@
 <?php
-class Categoria {
+class Banco {
     private $conexion;
 
     public function __construct($db) {
@@ -7,8 +7,7 @@ class Categoria {
     }
 
     public function crear($nombre) {
-
-        $query = "INSERT INTO categorias (Nombre) VALUES (?)";
+        $query = "INSERT INTO bancos (Nombre) VALUES (?)";
         $stmt = $this->conexion->prepare($query);
 
         if ($stmt === false) {
@@ -25,7 +24,7 @@ class Categoria {
     }
 
     public function leer() {
-        $query = "SELECT * FROM categorias";
+        $query = "SELECT * FROM bancos";
         $stmt = $this->conexion->prepare($query);
         $stmt->execute();
         $resultado = $stmt->get_result();
@@ -33,7 +32,7 @@ class Categoria {
     }
 
     public function leerPorId($id) {
-        $query = "SELECT * FROM categorias WHERE Id = ? LIMIT 1";
+        $query = "SELECT * FROM bancos WHERE Id = ? LIMIT 1";
         $stmt = $this->conexion->prepare($query);
         $stmt->bind_param("i", $id); 
         $stmt->execute();
@@ -42,7 +41,7 @@ class Categoria {
     }
 
     public function actualizar($id, $nombre) {
-        $query = "UPDATE categorias SET Nombre = ? WHERE Id = ?";
+        $query = "UPDATE bancos SET Nombre = ? WHERE Id = ?";
         $stmt = $this->conexion->prepare($query);
         $stmt->bind_param("si", $nombre, $id);
         if ($stmt->execute()) {
@@ -52,7 +51,7 @@ class Categoria {
     }
 
     public function eliminar($id) {
-        $query = "DELETE FROM categorias WHERE Id = ?";
+        $query = "DELETE FROM bancos WHERE Id = ?";
         $stmt = $this->conexion->prepare($query);
         $stmt->bind_param("i", $id); 
         if ($stmt->execute()) {
