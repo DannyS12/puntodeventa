@@ -15,7 +15,15 @@ if (!isset($_SESSION['usuario_id'])) {
     <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#createCategoryModal">
         Nuevo
     </button>
+    <!-- <form id="crearCategoriaForm">
+        <div class="mb-3">
+            <label for="nombre" class="form-label">Nombre de la Categoría</label>
+            <input type="text" class="form-control" id="nombre" name="nombre" required>
+        </div>
+        <button type="submit" class="btn btn-primary">Crear Categoría</button>
+    </form> -->
     <div id="resultado"></div>
+    <!-- <div id="listado-categorias"></div> -->
     <table id="tabladatos" class="display" style="width:100%">
         <thead>
             <tr>

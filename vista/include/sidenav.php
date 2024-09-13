@@ -42,7 +42,7 @@
             </a>
             <div class="collapse" id="collapseParam" aria-labelledby="headingTwo" data-bs-parent="#sidenavAccordion">
               <nav class="sb-sidenav-menu-nested nav accordion" id="sidenavAccordionPages">
-                <a class="nav-link" href="#" onclick="loadContent('bancos.php')">Bancos</a>
+                <a class="nav-link" href="register.html">Bancos</a>
                 <a class="nav-link" href="register.html">Usuarios</a>
               </nav>
             </div>

@@ -1,24 +1,22 @@
 $(document).ready(function() {
+   
+    $('#tabladatos').DataTable({
+        "language": {
+            "url": "json/es_es.json"
+        },
+        lengthMenu: [
+            [10, 20, 50, -1],
+            [10, 20, 50, "Todos"]
+        ],         
+    });
+
     function cargarCategorias() {
-        if ($.fn.DataTable.isDataTable('#tabladatos')) {
-            $('#tabladatos').DataTable().destroy();
-        }
-    
         $.ajax({
             url: '../ajax/categoria_listar.php',
             type: 'GET',
             success: function(data) {
                 $('#tabladatos tbody').html(data);
-    
-                $('#tabladatos').DataTable({
-                    "language": {
-                        "url": "json/es_es.json"
-                    },
-                    lengthMenu: [
-                        [10, 20, 50, -1],
-                        [10, 20, 50, "Todos"]
-                    ]
-                });
+                $('#tabladatos').DataTable();
             },
             error: function(xhr, status, error) {
                 console.error('Error al cargar las categorías:', error);
@@ -68,9 +66,9 @@ $(document).ready(function() {
             success: function(response) {
                 alert("Categoría actualizada correctamente");
                 $('#editCategoryForm')[0].reset();
-                $('#editCategoryModal').modal('hide'); 
+                $('#editCategoryModal').modal('hide'); // Cerrar el modal después de actualizar
                 $('#resultado').html(response);
-                cargarCategorias(); 
+                cargarCategorias(); // Recargar la tabla de categorías
             },
             error: function() {
                 alert("Ocurrió un error al actualizar la categoría.");
@@ -88,7 +86,7 @@ $(document).ready(function() {
                 data: { id: id, eliminar: true },
                 success: function(response) {
                     $('#resultado').html(response);
-                    cargarCategorias(); 
+                    cargarCategorias(); // Recargar la tabla de categorías
                 },
                 error: function() {
                     alert("Ocurrió un error al eliminar la categoría.");

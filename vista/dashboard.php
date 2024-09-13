@@ -38,6 +38,7 @@ include("include/header.php")
       .then(response => response.text())
       .then(data => {
         document.getElementById('page-content').innerHTML = data;
+         // Ejecutar scripts después de que el contenido haya sido cargado
          runPageScripts();
 
       })
@@ -45,6 +46,11 @@ include("include/header.php")
   }
 
   function runPageScripts() {
+    // Aquí puedes colocar cualquier lógica para ejecutar scripts internos
+    /*if (document.querySelector('#tabladatos')) {
+      $('#tabladatos').DataTable();
+    }*/
+    // Ejecutar scripts adicionales
     const scripts = document.querySelectorAll('#page-content script');
     scripts.forEach(script => {
       const newScript = document.createElement('script');
