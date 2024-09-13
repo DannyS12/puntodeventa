@@ -24,9 +24,9 @@ class Usuario {
 
     public function cerrarSesion()
     {
-        session_start(); // Iniciar la sesión para poder destruirla
-        session_unset();  // Eliminar todas las variables de sesión
-        session_destroy(); // Destruir la sesión
+        session_start(); 
+        session_unset(); 
+        session_destroy(); 
     }
 }
 ?>
