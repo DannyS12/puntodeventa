@@ -14,8 +14,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $_SESSION['usuario_id'] = $resultado['Id'];
         $_SESSION['nombreUsuario'] = $resultado['NombreUsuario'];
         $_SESSION['rol'] = $resultado['Rol'];
-
-        header("Location: dashboard.php");
+        header("Location: vista/dashboard.php");
     } else {
         echo "Usuario o contraseña incorrectos.";
         header("Location: login.php?error=1");
