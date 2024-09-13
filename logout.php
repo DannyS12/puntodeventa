@@ -1,7 +1,5 @@
 <?php
-require_once 'classes/Usuario.php';
-
- 
+require_once 'classes/Usuario.php'; 
 $usuario = new Usuario($db);
 $usuario->cerrarSesion(); 
 
