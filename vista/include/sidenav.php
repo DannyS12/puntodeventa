@@ -31,7 +31,7 @@
               <nav class="sb-sidenav-menu-nested nav accordion" id="sidenavAccordionPages">
                 <a class="nav-link" href="login.html">Nueva Venta</a>
                 <a class="nav-link" href="register.html">Reporte Ventas</a>
-                <a class="nav-link" href="register.html">Pagos</a>
+                <a class="nav-link" href="#" onclick="loadContent('pagos.php')">Pagos</a>
                 <a class="nav-link" href="register.html">Devoluciones</a>
               </nav>
             </div>
@@ -42,7 +42,7 @@
             </a>
             <div class="collapse" id="collapseParam" aria-labelledby="headingTwo" data-bs-parent="#sidenavAccordion">
               <nav class="sb-sidenav-menu-nested nav accordion" id="sidenavAccordionPages">
-                <a class="nav-link" href="register.html">Bancos</a>
+                <a class="nav-link" href="#" onclick="loadContent('bancos.php')">Bancos</a>
                 <a class="nav-link" href="register.html">Usuarios</a>
               </nav>
             </div>

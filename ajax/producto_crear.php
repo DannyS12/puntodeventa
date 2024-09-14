@@ -23,3 +23,19 @@ if (isset($_POST['crear'])) {
     }
 }
 ?>
+
+<?php
+require_once '../dbx.php'; // Conexión a la base de datos
+require_once '../classes/Categoria.php';
+
+$categoria = new Categoria($conexion);
+$categorias = $categoria->leer(); // Método que recupera todas las categorías
+
+// Generar las opciones de selección
+$html = '<option value="">Seleccione una categoría</option>';
+foreach ($categorias as $cat) {
+    $html .= "<option value='{$cat['Id']}'>{$cat['Nombre']}</option>";
+}
+
+echo $html;  // Esto devolverá las opciones de categoría
+?>

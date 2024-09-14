@@ -153,4 +153,34 @@ $(document).ready(function() {
             });
         }
     });
+
+    $(document).ready(function() {
+        // Cargar categorías en el select
+        $.ajax({
+            url: '../ajax/producto_actualizar.php',  // Ruta a tu archivo PHP que carga las categorías
+            type: "GET",
+            success: function(data) {
+                $('#editCategoriaId').html(data);  // Colocar las opciones en el select
+            },
+            error: function(xhr, status, error) {
+                console.error("Error al cargar las categorías:", error);
+            }
+        });
+    });
+
+    $(document).ready(function() {
+        // Cargar categorías en el select
+        $.ajax({
+            url: '../ajax/producto_crear.php',  // Ruta a tu archivo PHP que carga las categorías
+            type: "GET",
+            success: function(data) {
+                $('#categoriaId').html(data);  // Colocar las opciones en el select
+            },
+            error: function(xhr, status, error) {
+                console.error("Error al cargar las categorías:", error);
+            }
+        });
+    });
+    
+
 });

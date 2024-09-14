@@ -75,8 +75,11 @@ if (!isset($_SESSION['usuario_id'])) {
                         </div>
                         <div class="mb-3">
                             <label for="categoriaId" class="form-label">ID de Categoría</label>
-                            <input type="Text" class="form-control" id="categoriaId" name="categoriaId" required>
+                            <select class="form-control" id="categoriaId" name="categoriaId" required>
+                                <!-- Las opciones se cargarán aquí dinámicamente -->
+                            </select>
                         </div>
+
                         <button type="submit" class="btn btn-primary">Guardar Producto</button>
                     </form>
                 </div>
@@ -123,8 +126,10 @@ if (!isset($_SESSION['usuario_id'])) {
                             <input type="number" class="form-control" id="editStock" name="editStock" required>
                         </div>
                         <div class="mb-3">
-                            <label for="editCategoriaId" class="form-label">ID de Categoría</label>
-                            <input type="number" class="form-control" id="editCategoriaId" name="editCategoriaId" required>
+                            <label for="editCategoriaId" class="form-label">Categoría</label>
+                            <select class="form-control" id="editCategoriaId" name="editCategoriaId" required>
+                                <!-- Las opciones se cargarán aquí dinámicamente -->
+                            </select>
                         </div>
                         <button type="submit" class="btn btn-primary">Actualizar Producto</button>
                     </form>
